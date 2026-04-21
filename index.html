@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>ElectoLearn AI | Master the Indian Democratic Process</title>
+    <meta name="title" content="ElectoLearn AI | Master the Indian Democratic Process" />
+    <meta name="description" content="Empowering 969 million Indian voters with AI-driven insights, interactive simulations, and comprehensive election knowledge. Learn. Simulate. Vote." />
+    <meta name="keywords" content="election education, India elections 2024, voter awareness, AI election assistant, voter simulator, ECI, democracy, Indian constitution" />
+    <meta name="author" content="ElectoLearn AI Team" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://electolearn-ai.vercel.app/" />
+    <meta property="og:title" content="ElectoLearn AI | Empowering Informed Voters" />
+    <meta property="og:description" content="Journey through India's electoral process with our AI-powered interactive platform." />
+    <meta property="og:image" content="/og-image.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://electolearn-ai.vercel.app/" />
+    <meta property="twitter:title" content="ElectoLearn AI | Empowering Informed Voters" />
+    <meta property="twitter:description" content="Journey through India's electoral process with our AI-powered interactive platform." />
+    <meta property="twitter:image" content="/og-image.jpg" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Theme Initialization Script (Prevents FOUC) -->
+    <script>
+      (function() {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+  </head>
+  <body class="font-inter">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
