@@ -51,6 +51,23 @@ ElectoLearn AI is a production-ready educational platform designed to bridge the
    npm run build
    ```
 
+## ☁️ Deploy to Google Cloud Run
+
+This repo now includes a Cloud Run-ready container setup. The image serves the Vite build with SPA route fallback, and it writes `env-config.js` at container start so Cloud Run environment variables can reach the browser app.
+
+```bash
+gcloud builds submit --tag gcr.io/promptwars-virtual-493710/electolearn-ai
+gcloud run deploy electolearn-ai \
+   --image gcr.io/promptwars-virtual-493710/electolearn-ai \
+   --region <your-region> \
+   --platform managed \
+   --allow-unauthenticated \
+   --project promptwars-virtual-493710 \
+   --set-env-vars VITE_GEMINI_API_KEY=<your-key>
+```
+
+If you want to override the default Gemini model order, set `VITE_GEMINI_MODEL_CANDIDATES` in the Cloud Run service settings. If you do not set the Gemini key, the app still runs and falls back to its offline assistant responses.
+
 ## 🎯 Hackathon Pitch
 
 In many democracies, first-time voters feel overwhelmed by the complexity of the election process. **ElectoLearn AI** solves this by providing a "Digital Mentor." Unlike static government websites, our platform uses **Generative AI** to answer specific questions and **Gamification** to simulate the high-stakes decisions of an election day. 

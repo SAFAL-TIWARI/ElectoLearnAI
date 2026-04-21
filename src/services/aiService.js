@@ -1,9 +1,12 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
+const runtimeConfig = typeof globalThis !== "undefined" ? globalThis.__RUNTIME_CONFIG__ ?? {} : {};
+
+const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || runtimeConfig.VITE_GEMINI_API_KEY;
 const genAI = API_KEY ? new GoogleGenerativeAI(API_KEY) : null;
 const MODEL_CANDIDATES = (
   import.meta.env.VITE_GEMINI_MODEL_CANDIDATES ||
+  runtimeConfig.VITE_GEMINI_MODEL_CANDIDATES ||
   "gemini-2.5-flash,gemini-2.0-flash,gemini-flash-latest"
 )
   .split(",")

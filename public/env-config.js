@@ -1,0 +1,4 @@
+window.__RUNTIME_CONFIG__ = window.__RUNTIME_CONFIG__ || {
+  VITE_GEMINI_API_KEY: "",
+  VITE_GEMINI_MODEL_CANDIDATES: "",
+};
